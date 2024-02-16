@@ -46,4 +46,4 @@
 $heading = 'About page';
 
 
-require 'views/about.view.php';
+require view('about.view.php');

@@ -2,9 +2,9 @@
 
 $heading = 'Create the note';
 
-require 'Validator.php';
+require base_path('Validator.php');
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 
 $currentUser = 1;
 
@@ -28,4 +28,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 
-require 'views/notes/create.view.php';
+require view('notes/create.view.php');

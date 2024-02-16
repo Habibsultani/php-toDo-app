@@ -2,7 +2,7 @@
 
 
 
-$config = require('config.php');
+$config = require base_path('config.php');
 
 $db = new Database($config['database'], 'root', 1234);
 
@@ -17,4 +17,4 @@ $notes = $db->query($query)->get();
 // dd($notes);
 
 
-require 'views/notes/index.view.php';
+require view('notes/index.view.php');

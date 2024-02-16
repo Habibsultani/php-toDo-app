@@ -1,6 +1,6 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 
 $db = new Database($config['database'], 'root', 1234);
 
@@ -19,4 +19,4 @@ response($note && $note['user_id'] !== $currentUser);
 
 
 
-require 'views/notes/show.view.php';
+require view('notes/show.view.php');
