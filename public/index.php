@@ -3,21 +3,11 @@
 
 const BASE_PATH =  __DIR__ . '/../';
 
-require BASE_PATH . 'function.php';
-// dd(BASE_PATH);
+require BASE_PATH . 'core/function.php';
 
 
-// require 'function.php';
-// require __DIR__ . '/../Database.php';
-// require __DIR__ . '/../Response.php';
-// require __DIR__ . '/../router.php';
+require base_path('core/' . 'Detabase.php');
+require base_path('core/' . 'Response.php');
+require base_path('core/' . 'router.php');
 
-
-
-require base_path('Detabase.php');
-require base_path('Response.php');
-require base_path('router.php');
-
-// require 'Response.php';
-
-// require 'router.php'; 
+ 

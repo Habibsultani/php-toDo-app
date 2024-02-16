@@ -1,11 +1,11 @@
 <?php
 
 
-$routes = require "routes.php";
+$routes = require base_path("routes.php");
 
 function router($uri, $routes) {
     if (array_key_exists($uri, $routes)) {
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     } else {
         abort();
     }
@@ -13,7 +13,7 @@ function router($uri, $routes) {
 
 function abort($response = 404) {
     http_response_code($response);
-    require "views/response.{$response}.php";
+    require view("response.{$response}.php");
     die();
 }
 
