@@ -22,4 +22,13 @@
 
   <p class="mt-5"><?= htmlspecialchars($note["notes"])  ?></p>
 
+
+  <form class="mt-10" method="POST">
+
+    <input class="hidden" type="text" name="deleteValue" id="deletValue" value="<?= $note['id'] ?>">
+
+    <button class="font-semibold text-red-500 hover:underline" type="submit">Delete this note</button>
+
+  </form>
+
 </main>
