@@ -25,7 +25,9 @@
 
   <form class="mt-10" method="POST">
 
-    <input class="hidden" type="text" name="deleteValue" id="deletValue" value="<?= $note['id'] ?>">
+    <input type="hidden" name="_method" id="_method" value="DELETE">
+
+    <input type="hidden" name="deleteValue" id="deletValue" value="<?= $note['id'] ?>">
 
     <button class="font-semibold text-red-500 hover:underline" type="submit">Delete this note</button>
 

@@ -10,7 +10,15 @@ function dd($value) {
 }
 
 
-function urlIs($url) {
+function abort($code = 404)
+{
+    http_response_code($code);
+    require view("response.{$code}.php");
+    die();
+}
+
+function urlIs($url)
+{
     return $_SERVER['REQUEST_URI'] === $url;
 }
 
