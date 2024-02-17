@@ -33,4 +33,11 @@
 
   </form>
 
+  <footer class="mt-10">
+
+    <a href="/note/edit?id=<?= $note['id'] ?>" class="text-lg font-bold bg-gray-400 px-4 py-2 border rounded">Edite</a>
+
+  </footer>
+
+
 </main>
