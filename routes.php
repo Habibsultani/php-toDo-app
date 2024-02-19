@@ -35,3 +35,5 @@ $router->post('/register' , 'controller/register/store.php')->only('guest');
 $router->get('/session' , 'controller/session/index.php')->only('guest');
 
 $router->post('/session' , 'controller/session/store.php')->only('guest');
+
+$router->delete('/sessions' , 'controller/session/destroy.php')->only('auth');
