@@ -43,9 +43,9 @@ if ($result) {
     ]);
 
     // Store user data in session
-    $_SESSION['user'] = ['email' => $email];
+    logIn(['email' => $email]);
 
     // Redirect to notes page
-    header('Location: /notes');
+    header('Location: /');
     exit();
 }

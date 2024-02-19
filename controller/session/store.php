@@ -31,7 +31,9 @@ $user = $db->query('select * from users where email = :email', [
 
 if ($user && empty($error)) {
   if ($email === $user['email']  && password_verify($password ,$user['password'])) {
-     $_SESSION['user'] = ['email' => $email];
+
+    logIn(['email' => $email]);
+
      header('location: /');
      exit();
   }
