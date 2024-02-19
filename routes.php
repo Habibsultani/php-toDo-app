@@ -27,4 +27,4 @@ $router->post('/note/create' , 'controller/notes/add.php');
 
 $router->get('/register' , 'controller/register/index.php');
 
-$router->post('/register/store' , 'controller/register/store.php');
+$router->post('/register' , 'controller/register/store.php');

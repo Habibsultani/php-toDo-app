@@ -1,5 +1,10 @@
 <?php
 
+// 
+
+session_start();
+
+// $_SESSION['user'] = 'janbn';
 
 const BASE_PATH =  __DIR__ . '/../';
 

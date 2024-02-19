@@ -1,11 +1,6 @@
 <?php
 
-// Start session
-session_start();
 
-$heading = 'register here';
-
-// Include configuration file
 $config = require_once base_path('config.php');
 
 // Include Validator class
@@ -34,7 +29,13 @@ $db = new Database($config['database'], 'root', 1234);
 
 $result = $db->query('SELECT * FROM users WHERE email = :email', [':email' => $email])->find();
 
-if (empty($result)) {
+if ($result) {
+
+    // User already exists, redirect to home page
+    header('Location: /');
+    exit();
+    
+} else {
     // Insert user into the database
     $db->query("INSERT INTO users (password, email) VALUES (:password, :email)", [
         ':password' => $password,
@@ -46,9 +47,5 @@ if (empty($result)) {
 
     // Redirect to notes page
     header('Location: /notes');
-    exit();
-} else {
-    // User already exists, redirect to home page
-    header('Location: /');
     exit();
 }
