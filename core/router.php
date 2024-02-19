@@ -1,7 +1,9 @@
 <?php
 
-
 namespace core; 
+require base_path('core/midleWare/Guest.php');
+require base_path('core/midleWare/Auth.php');
+
 
 
 class Router {
@@ -59,22 +61,13 @@ class Router {
 
                 if( $route['midleWare'] === 'guest')
                 {
-                    if($_SESSION['user'] ?? false) 
-                    {
-                        header('location: /');
-                        exit();
-                    }
+                    (new \Guest)->handler();
                 }
 
                 if ( $route['midleWare'] === 'auth') {
-                    if(!$_SESSION['user'] ?? false) 
-                    {
-                        header('location: /');
-                        exit();
-                    }
+                    (new \Auth)->handler();
                 }
-
-
+                
                 require base_path($route['controller']);
                 return;
              }
