@@ -38,7 +38,7 @@ if ($result) {
 } else {
     // Insert user into the database
     $db->query("INSERT INTO users (password, email) VALUES (:password, :email)", [
-        ':password' => $password,
+        ':password' => password_hash($password, PASSWORD_BCRYPT),
         ':email' => $email
     ]);
 
