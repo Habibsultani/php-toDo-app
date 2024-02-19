@@ -9,7 +9,7 @@ $router->get('/contact' , 'controller/contact.php');
 
 ////// notes part route
 
-$router->get('/notes' , 'controller/notes/index.php');
+$router->get('/notes' , 'controller/notes/index.php')->only('auth');
 
 $router->get('/note' , 'controller/notes/show.php');
 
@@ -25,6 +25,6 @@ $router->post('/note/create' , 'controller/notes/add.php');
 
 //// the user login and register router
 
-$router->get('/register' , 'controller/register/index.php');
+$router->get('/register' , 'controller/register/index.php')->only('guest');
 
 $router->post('/register' , 'controller/register/store.php');
