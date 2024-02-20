@@ -68,7 +68,7 @@ class Router {
                     (new \Auth)->handler();
                 }
                 
-                require base_path($route['controller']);
+                require base_path('http/controller/' . $route['controller']);
                 return;
              }
         }
