@@ -5,24 +5,20 @@ $config = require_once base_path('config.php');
 
 // Include Validator class
 require_once base_path('core/Validator.php');
+require_once base_path('http/form/LogIn.php');
 
 // Validate email and password
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 
-$error = [];
+$form = new LogIn();
 
-if (!Validator::email($email)) {
-    $error['login'] = 'Please enter a valid email address';
-} elseif (!Validator::string($password, 7, 255)) {
-    $error['login'] = 'Please enter a password between 7 and 255 characters';
-}
-
-// Handle validation errors
-if (!empty($error)) {
+if(! $form->validate($email, $password)) {
+    $error = $form->error();
     require_once view('register/index.view.php');
     exit();
 }
+
 
 // Database interaction
 $db = new Database($config['database'], 'root', 1234);
