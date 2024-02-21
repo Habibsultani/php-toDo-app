@@ -12,5 +12,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "require": {
+        "illuminate/collections": "^10.45"
     }
 }
